@@ -1,0 +1,41 @@
+|seven_segment_display
+clk => ~NO_FANOUT~
+clk_1ms => ~NO_FANOUT~
+reset => seg1.OUTPUTSELECT
+reset => seg1.OUTPUTSELECT
+reset => seg1.OUTPUTSELECT
+reset => seg1.OUTPUTSELECT
+reset => seg1.OUTPUTSELECT
+reset => seg1.OUTPUTSELECT
+reset => seg1.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+reset => seg2.OUTPUTSELECT
+player1_score[0] => Decoder1.IN3
+player1_score[1] => Decoder1.IN2
+player1_score[2] => Decoder1.IN1
+player1_score[3] => Decoder1.IN0
+player2_score[0] => Decoder0.IN3
+player2_score[1] => Decoder0.IN2
+player2_score[2] => Decoder0.IN1
+player2_score[3] => Decoder0.IN0
+seg1[0] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg1[1] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg1[2] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg1[3] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg1[4] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg1[5] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg1[6] <= seg1.DB_MAX_OUTPUT_PORT_TYPE
+seg2[0] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+seg2[1] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+seg2[2] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+seg2[3] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+seg2[4] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+seg2[5] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+seg2[6] <= seg2.DB_MAX_OUTPUT_PORT_TYPE
+
+
