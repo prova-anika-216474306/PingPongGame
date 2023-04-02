@@ -59,3 +59,5 @@ set_global_assignment -name VERILOG_FILE Clock_Divider.v
 set_global_assignment -name VERILOG_FILE Ball_Object.v
 set_global_assignment -name VERILOG_FILE Paddle_Object.v
 set_global_assignment -name VERILOG_FILE Game_Sate.v
+set_global_assignment -name VERILOG_FILE VGA_Signal_Generator.v
+set_global_assignment -name VERILOG_FILE VGA_Display.v
