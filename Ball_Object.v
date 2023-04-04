@@ -41,7 +41,7 @@ module Ball_Object(
 			// collision with the screen edges
 			if (y_ball == (ball_height/2)+1)
 				dy = dy*-1;
-			if (y_ball == (V_ACTIVE-(ball_height/2)-1))/
+			if (y_ball == (V_ACTIVE-(ball_height/2)-1))
 				dy = dy*-1;
 
 			// after collision with the paddle,the direction of the ball changes

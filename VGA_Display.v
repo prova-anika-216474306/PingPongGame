@@ -25,7 +25,7 @@ module VGA_Display(
 	always @(posedge clk)
 	begin
 	if (!reset)
-		rgb_reg <= 0;//black screen or start screen?
+		rgb_reg <= 0;
 	else
 		begin
 			if (game_state == 2'b01)

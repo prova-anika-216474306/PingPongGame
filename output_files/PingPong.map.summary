@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Apr 02 00:08:25 2023
+Analysis & Synthesis Status : Successful - Mon Apr 03 15:59:46 2023
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : PingPong
-Top-level Entity Name : seven_segment_display
+Top-level Entity Name : Top_Module
 Family : MAX 10
-Total logic elements : 28
-    Total combinational functions : 28
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 25
+Total logic elements : 428
+    Total combinational functions : 428
+    Dedicated logic registers : 106
+Total registers : 106
+Total pins : 34
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -1,6 +1,6 @@
-module seven_segment_display (
+module Seven_Segment_Display (
 	input clk, clk_1ms, reset,
-	input [3:0] player1_score, player2_score,
+	input [3:0] p1_score, p2_score,
 	output reg [6:0] seg1, seg2
 	);
 	
@@ -13,7 +13,7 @@ module seven_segment_display (
 	end
 	else 
 	begin
-		case (player2_score)
+		case (p2_score)
 			4'h0 : seg1 = 7'b1000000;  // 0
 			4'h1 : seg1 = 7'b1111001;  // 1
 			4'h2 : seg1 = 7'b0100100;  // 2
@@ -27,7 +27,7 @@ module seven_segment_display (
 			default : seg1 = 7'b1111111;
 		endcase
 		
-		case (player1_score)
+		case (p1_score)
 			4'h0 : seg2 = 7'b1000000;  // 0
 			4'h1 : seg2 = 7'b1111001;  // 1
 			4'h2 : seg2 = 7'b0100100;  // 2

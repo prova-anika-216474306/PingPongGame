@@ -46,7 +46,6 @@ module VGA_Signal_Generator(
 	reg vsync_reg, hsync_reg;
 	wire vsync_next, hsync_next;
  
-	//infer registers
 	always @(posedge clk, posedge reset)
 		if(reset)
 			begin
