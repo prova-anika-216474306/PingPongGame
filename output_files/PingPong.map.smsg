@@ -1,2 +1,1 @@
-Warning (10268): Verilog HDL information at Clock_Divider.v(8): always construct contains both blocking and non-blocking assignments File: C:/Users/Anika/Desktop/ProjectPingPong/Clock_Divider.v Line: 8
 Warning (10268): Verilog HDL information at Ball_Object.v(29): always construct contains both blocking and non-blocking assignments File: C:/Users/Anika/Desktop/ProjectPingPong/Ball_Object.v Line: 29

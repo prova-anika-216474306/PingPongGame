@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PingPong
-Mon Apr 03 15:59:46 2023
+Tue Apr 04 15:45:56 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -17,11 +17,12 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   9. Removed Registers Triggering Further Register Optimizations
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "VGA_Signal_Generator:v1"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
- 16. Analysis & Synthesis Suppressed Messages
+ 12. Parameter Settings for User Entity Instance: Clock_Divider:c1
+ 13. Port Connectivity Checks: "VGA_Signal_Generator:v1"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -48,15 +49,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 03 15:59:46 2023       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr 04 15:45:56 2023       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; PingPong                                    ;
 ; Top-level Entity Name              ; Top_Module                                  ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 428                                         ;
-;     Total combinational functions  ; 428                                         ;
-;     Dedicated logic registers      ; 106                                         ;
-; Total registers                    ; 106                                         ;
+; Total logic elements               ; 429                                         ;
+;     Total combinational functions  ; 429                                         ;
+;     Dedicated logic registers      ; 111                                         ;
+; Total registers                    ; 111                                         ;
 ; Total pins                         ; 34                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -192,20 +193,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 428       ;
+; Estimated Total logic elements              ; 429       ;
 ;                                             ;           ;
-; Total combinational functions               ; 428       ;
+; Total combinational functions               ; 429       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 85        ;
-;     -- 3 input functions                    ; 156       ;
-;     -- <=2 input functions                  ; 187       ;
+;     -- 4 input functions                    ; 84        ;
+;     -- 3 input functions                    ; 157       ;
+;     -- <=2 input functions                  ; 188       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 174       ;
-;     -- arithmetic mode                      ; 254       ;
+;     -- normal mode                          ; 170       ;
+;     -- arithmetic mode                      ; 259       ;
 ;                                             ;           ;
-; Total registers                             ; 106       ;
-;     -- Dedicated logic registers            ; 106       ;
+; Total registers                             ; 111       ;
+;     -- Dedicated logic registers            ; 111       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 34        ;
@@ -213,9 +214,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 56        ;
-; Total fan-out                               ; 1576      ;
-; Average fan-out                             ; 2.62      ;
+; Maximum fan-out                             ; 61        ;
+; Total fan-out                               ; 1619      ;
+; Average fan-out                             ; 2.66      ;
 +---------------------------------------------+-----------+
 
 
@@ -224,44 +225,43 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                      ; Entity Name           ; Library Name ;
 +-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+-----------------------+--------------+
-; |Top_Module                       ; 428 (1)             ; 106 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 34   ; 0            ; 0          ; |Top_Module                              ; Top_Module            ; work         ;
-;    |Ball_Object:b1|               ; 183 (183)           ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Ball_Object:b1               ; Ball_Object           ; work         ;
-;    |Clock_Divider:c1|             ; 44 (44)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Clock_Divider:c1             ; Clock_Divider         ; work         ;
-;    |Game_State:comb_3|            ; 4 (4)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Game_State:comb_3            ; Game_State            ; work         ;
-;    |Paddle_Object:p1|             ; 119 (119)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Paddle_Object:p1             ; Paddle_Object         ; work         ;
+; |Top_Module                       ; 429 (1)             ; 111 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 34   ; 0            ; 0          ; |Top_Module                              ; Top_Module            ; work         ;
+;    |Ball_Object:b1|               ; 181 (181)           ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Ball_Object:b1               ; Ball_Object           ; work         ;
+;    |Clock_Divider:c1|             ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Clock_Divider:c1             ; Clock_Divider         ; work         ;
+;    |Game_State:comb_3|            ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Game_State:comb_3            ; Game_State            ; work         ;
+;    |Paddle_Object:p1|             ; 118 (118)           ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Paddle_Object:p1             ; Paddle_Object         ; work         ;
 ;    |Seven_Segment_Display:comb_4| ; 28 (28)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|Seven_Segment_Display:comb_4 ; Seven_Segment_Display ; work         ;
-;    |VGA_Display:r1|               ; 8 (8)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|VGA_Display:r1               ; VGA_Display           ; work         ;
-;    |VGA_Signal_Generator:v1|      ; 41 (41)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|VGA_Signal_Generator:v1      ; VGA_Signal_Generator  ; work         ;
+;    |VGA_Display:r1|               ; 10 (10)             ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|VGA_Display:r1               ; VGA_Display           ; work         ;
+;    |VGA_Signal_Generator:v1|      ; 42 (42)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_Module|VGA_Signal_Generator:v1      ; VGA_Signal_Generator  ; work         ;
 +-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+----------------------------------------+-----------------------------------------------+
-; Register name                          ; Reason for Removal                            ;
-+----------------------------------------+-----------------------------------------------+
-; Paddle_Object:p1|x_paddle2[0,1]        ; Stuck at GND due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle2[2]          ; Stuck at VCC due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle2[3,4]        ; Stuck at GND due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle2[5,6]        ; Stuck at VCC due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle2[7,8]        ; Stuck at GND due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle2[9]          ; Stuck at VCC due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle1[0,1]        ; Stuck at GND due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle1[2..4]       ; Stuck at VCC due to stuck port data_in        ;
-; Paddle_Object:p1|x_paddle1[5..9]       ; Stuck at GND due to stuck port data_in        ;
-; VGA_Display:r1|rgb_reg[1..3]           ; Merged with VGA_Display:r1|rgb_reg[0]         ;
-; VGA_Display:r1|rgb_reg[5..7]           ; Merged with VGA_Display:r1|rgb_reg[4]         ;
-; VGA_Display:r1|rgb_reg[8,9,11]         ; Merged with VGA_Display:r1|rgb_reg[10]        ;
-; Ball_Object:b1|dx[0]                   ; Stuck at VCC due to stuck port data_in        ;
-; Ball_Object:b1|dy[0]                   ; Stuck at VCC due to stuck port data_in        ;
-; Ball_Object:b1|dx[10..31]              ; Lost fanout                                   ;
-; Ball_Object:b1|dy[10..31]              ; Lost fanout                                   ;
-; Ball_Object:b1|dx[2..9]                ; Merged with Ball_Object:b1|dx[1]              ;
-; Ball_Object:b1|dy[2..9]                ; Merged with Ball_Object:b1|dy[1]              ;
-; Clock_Divider:c1|i[0]                  ; Merged with VGA_Signal_Generator:v1|pixel_reg ;
-; Total Number of Removed Registers = 92 ;                                               ;
-+----------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; Paddle_Object:p1|x_paddle2[0,1]        ; Stuck at GND due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle2[2]          ; Stuck at VCC due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle2[3,4]        ; Stuck at GND due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle2[5,6]        ; Stuck at VCC due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle2[7,8]        ; Stuck at GND due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle2[9]          ; Stuck at VCC due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle1[0,1]        ; Stuck at GND due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle1[2..4]       ; Stuck at VCC due to stuck port data_in ;
+; Paddle_Object:p1|x_paddle1[5..9]       ; Stuck at GND due to stuck port data_in ;
+; VGA_Display:r1|rgb_reg[1..3]           ; Merged with VGA_Display:r1|rgb_reg[0]  ;
+; VGA_Display:r1|rgb_reg[5..7]           ; Merged with VGA_Display:r1|rgb_reg[4]  ;
+; VGA_Display:r1|rgb_reg[8,9,11]         ; Merged with VGA_Display:r1|rgb_reg[10] ;
+; Ball_Object:b1|dx[0]                   ; Stuck at VCC due to stuck port data_in ;
+; Ball_Object:b1|dy[0]                   ; Stuck at VCC due to stuck port data_in ;
+; Ball_Object:b1|dx[10..31]              ; Lost fanout                            ;
+; Ball_Object:b1|dy[10..31]              ; Lost fanout                            ;
+; Ball_Object:b1|dx[2..9]                ; Merged with Ball_Object:b1|dx[1]       ;
+; Ball_Object:b1|dy[2..9]                ; Merged with Ball_Object:b1|dy[1]       ;
+; Total Number of Removed Registers = 91 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -279,8 +279,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 106   ;
-; Number of registers using Synchronous Clear  ; 10    ;
+; Total registers                              ; 111   ;
+; Number of registers using Synchronous Clear  ; 42    ;
 ; Number of registers using Synchronous Load   ; 40    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -294,24 +294,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Top_Module|Ball_Object:b1|p2_score[3]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Top_Module|Ball_Object:b1|p2_score[1]    ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Top_Module|Ball_Object:b1|p1_score[1]    ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Top_Module|Paddle_Object:p1|y_paddle2[9] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Top_Module|Paddle_Object:p1|y_paddle1[9] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Top_Module|Paddle_Object:p1|y_paddle1[3] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Top_Module|Paddle_Object:p1|y_paddle2[4] ;
 ; 5:1                ; 20 bits   ; 60 LEs        ; 20 LEs               ; 40 LEs                 ; Yes        ; |Top_Module|Ball_Object:b1|y_ball[0]      ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Top_Module|Ball_Object:b1|dx             ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |Top_Module|Ball_Object:b1|dy             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "VGA_Signal_Generator:v1"                                                                                                                       ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                                                      ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; p_tick ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Clock_Divider:c1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; D              ; 65000 ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "VGA_Signal_Generator:v1"                                                                                                                     ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -320,25 +329,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 34                          ;
-; cycloneiii_ff         ; 106                         ;
+; cycloneiii_ff         ; 111                         ;
 ;     ENA               ; 24                          ;
 ;     ENA SCLR          ; 6                           ;
 ;     ENA SLD           ; 40                          ;
-;     SCLR              ; 4                           ;
-;     plain             ; 32                          ;
-; cycloneiii_lcell_comb ; 428                         ;
-;     arith             ; 254                         ;
-;         2 data inputs ; 109                         ;
-;         3 data inputs ; 145                         ;
-;     normal            ; 174                         ;
+;     SCLR              ; 36                          ;
+;     plain             ; 5                           ;
+; cycloneiii_lcell_comb ; 429                         ;
+;     arith             ; 259                         ;
+;         2 data inputs ; 115                         ;
+;         3 data inputs ; 144                         ;
+;     normal            ; 170                         ;
 ;         0 data inputs ; 11                          ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 63                          ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 85                          ;
+;         2 data inputs ; 58                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 84                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.40                        ;
-; Average LUT depth     ; 4.74                        ;
+; Average LUT depth     ; 4.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -357,7 +366,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Apr 03 15:59:39 2023
+    Info: Processing started: Tue Apr 04 15:45:49 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PingPong -c PingPong
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -366,7 +375,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file seven_s
 Info (12021): Found 1 design units, including 1 entities, in source file game_state.v
     Info (12023): Found entity 1: Game_State File: C:/Users/Anika/Desktop/ProjectPingPong/Game_State.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clock_divider.v
-    Info (12023): Found entity 1: Clock_Divider File: C:/Users/Anika/Desktop/ProjectPingPong/Clock_Divider.v Line: 1
+    Info (12023): Found entity 1: Clock_Divider File: C:/Users/Anika/Desktop/ProjectPingPong/Clock_Divider.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file ball_object.v
     Info (12023): Found entity 1: Ball_Object File: C:/Users/Anika/Desktop/ProjectPingPong/Ball_Object.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file paddle_object.v
@@ -377,19 +386,19 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_dis
     Info (12023): Found entity 1: VGA_Display File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Display.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file top_module.v
     Info (12023): Found entity 1: Top_Module File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file debounce.v
+    Info (12023): Found entity 1: Debounce File: C:/Users/Anika/Desktop/ProjectPingPong/Debounce.v Line: 5
+    Info (12023): Found entity 2: clock_enable File: C:/Users/Anika/Desktop/ProjectPingPong/Debounce.v Line: 17
+    Info (12023): Found entity 3: my_dff_en File: C:/Users/Anika/Desktop/ProjectPingPong/Debounce.v Line: 26
 Critical Warning (10846): Verilog HDL Instantiation warning at Top_Module.v(38): instance has no name File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 38
 Critical Warning (10846): Verilog HDL Instantiation warning at Top_Module.v(40): instance has no name File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 40
 Info (12127): Elaborating entity "Top_Module" for the top level hierarchy
 Info (12128): Elaborating entity "VGA_Signal_Generator" for hierarchy "VGA_Signal_Generator:v1" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 20
-Warning (10230): Verilog HDL assignment warning at VGA_Signal_Generator.v(38): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Signal_Generator.v Line: 38
-Warning (10230): Verilog HDL assignment warning at VGA_Signal_Generator.v(68): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Signal_Generator.v Line: 68
-Warning (10230): Verilog HDL assignment warning at VGA_Signal_Generator.v(72): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Signal_Generator.v Line: 72
+Warning (10230): Verilog HDL assignment warning at VGA_Signal_Generator.v(41): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Signal_Generator.v Line: 41
+Warning (10230): Verilog HDL assignment warning at VGA_Signal_Generator.v(71): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Signal_Generator.v Line: 71
+Warning (10230): Verilog HDL assignment warning at VGA_Signal_Generator.v(75): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Signal_Generator.v Line: 75
 Info (12128): Elaborating entity "VGA_Display" for hierarchy "VGA_Display:r1" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 25
-Warning (10036): Verilog HDL or VHDL warning at VGA_Display.v(22): object "x_block" assigned a value but never read File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Display.v Line: 22
-Warning (10036): Verilog HDL or VHDL warning at VGA_Display.v(22): object "y_block" assigned a value but never read File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Display.v Line: 22
-Warning (10230): Verilog HDL assignment warning at VGA_Display.v(22): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/VGA_Display.v Line: 22
 Info (12128): Elaborating entity "Clock_Divider" for hierarchy "Clock_Divider:c1" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 27
-Warning (10230): Verilog HDL assignment warning at Clock_Divider.v(15): truncated value with size 32 to match size of target (28) File: C:/Users/Anika/Desktop/ProjectPingPong/Clock_Divider.v Line: 15
 Info (12128): Elaborating entity "Ball_Object" for hierarchy "Ball_Object:b1" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 31
 Warning (10230): Verilog HDL assignment warning at Ball_Object.v(33): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Ball_Object.v Line: 33
 Warning (10230): Verilog HDL assignment warning at Ball_Object.v(34): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Ball_Object.v Line: 34
@@ -403,16 +412,16 @@ Warning (10230): Verilog HDL assignment warning at Ball_Object.v(72): truncated 
 Warning (10230): Verilog HDL assignment warning at Ball_Object.v(73): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Ball_Object.v Line: 73
 Warning (10230): Verilog HDL assignment warning at Ball_Object.v(84): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/Ball_Object.v Line: 84
 Info (12128): Elaborating entity "Paddle_Object" for hierarchy "Paddle_Object:p1" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 36
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(31): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 31
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(32): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 32
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(38): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 38
 Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(39): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 39
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(41): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 41
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(45): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 45
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(54): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 54
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(55): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 55
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(46): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 46
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(48): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 48
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(52): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 52
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(61): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 61
 Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(62): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 62
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(64): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 64
-Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(68): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 68
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(69): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 69
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(71): truncated value with size 32 to match size of target (10) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 71
+Warning (10230): Verilog HDL assignment warning at Paddle_Object.v(75): truncated value with size 32 to match size of target (1) File: C:/Users/Anika/Desktop/ProjectPingPong/Paddle_Object.v Line: 75
 Info (12128): Elaborating entity "Game_State" for hierarchy "Game_State:comb_3" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 38
 Info (12128): Elaborating entity "Seven_Segment_Display" for hierarchy "Seven_Segment_Display:comb_4" File: C:/Users/Anika/Desktop/ProjectPingPong/Top_Module.v Line: 40
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -421,15 +430,15 @@ Info (17049): 44 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/Anika/Desktop/ProjectPingPong/output_files/PingPong.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 462 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 463 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 428 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 4790 megabytes
-    Info: Processing ended: Mon Apr 03 15:59:46 2023
+    Info (21061): Implemented 429 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4768 megabytes
+    Info: Processing ended: Tue Apr 04 15:45:56 2023
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +------------------------------------------+

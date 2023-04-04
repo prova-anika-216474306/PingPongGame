@@ -70,7 +70,7 @@ module Ball_Object(
 			else
 			begin
 				x_ball <= x_ball + dx;
-				y_ball <= y_ball - dy;	
+				y_ball <= y_ball + dy;	
 			end
 		end
 		else 
@@ -84,7 +84,7 @@ module Ball_Object(
 	assign ball_on = (x >= x_ball-(ball_width/2) && x <= x_ball+(ball_width/2) && y >= y_ball-(ball_height/2) && y <= y_ball+(ball_height/2))?1:0;
 	
 	//design to render
-	assign rgb_ball = 12'b111111111111;
+	assign rgb_ball = 12'b000011111111;
 	
 	
 	

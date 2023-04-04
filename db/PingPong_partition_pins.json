@@ -124,19 +124,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "button2",
-					"strict" : false
-				},
-				{
-					"name" : "button3",
-					"strict" : false
-				},
-				{
 					"name" : "button",
 					"strict" : false
 				},
 				{
 					"name" : "button1",
+					"strict" : false
+				},
+				{
+					"name" : "button2",
+					"strict" : false
+				},
+				{
+					"name" : "button3",
 					"strict" : false
 				}
 			]

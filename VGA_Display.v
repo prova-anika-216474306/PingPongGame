@@ -10,17 +10,6 @@ module VGA_Display(
 	);
 	
 	reg [11:0] rgb_reg;
-
-	
-	localparam H_ACTIVE	= 640;
-	localparam V_ACTIVE	= 480;
-	localparam zero		= 0;
-	
-	localparam X_blocksize = 50; 
-	localparam Y_blocksize = 50;
-	
-	reg [9:0] x_block = H_ACTIVE/2, y_block=V_ACTIVE/2;
-	
 	
 	always @(posedge clk)
 	begin
@@ -38,7 +27,7 @@ module VGA_Display(
 				else if (ball_on)
 					rgb_reg <= rgb_ball;
 				else
-					rgb_reg <= 12'b000000000000;
+					rgb_reg <= 12'b111111111111;
 			end
 			else if (game_state == 2'b10)
 				rgb_reg <= rgb_paddle1;

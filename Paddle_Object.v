@@ -13,6 +13,13 @@ module Paddle_Object(
 	output reg [9:0] y_paddle2 = V_active/2
 	);
 	
+//	wire button, button1, button2, button3; 
+//	
+//	Debounce d(btn, clk_1ms, button);
+//	Debounce d1(btn1, clk_1ms, button1);
+//	Debounce d2(btn2, clk_1ms, button2);
+//	Debounce d3(btn3, clk_1ms, button3);
+	
 	//same as ball, active perimeter of the screen
 	localparam H_active = 640;
 	localparam V_active = 480;
@@ -68,6 +75,6 @@ module Paddle_Object(
 	assign paddle2_on = (x >= x_paddle2-(paddlewidth/2) && x <= x_paddle2+(paddlewidth/2) && y >= y_paddle2-(paddleheight/2) && y < y_paddle2+(paddleheight/2))?1:0;
 	
 	//render to design
-	assign rgb_paddle2 = 12'b000000001111; //orange =12'bb111101110000
+	assign rgb_paddle2 = 12'b000000001111; 
 	
 endmodule

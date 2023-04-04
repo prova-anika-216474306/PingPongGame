@@ -1,26 +1,29 @@
 module VGA_Signal_Generator(
 	input clk,reset,
-	output hsync,vsync, video_on,p_tick,
-	output [9:0] x,y//position of x and y
+	output hsync,vsync, video_on,
+	output [9:0] x,y//position of x and y. current position of the pixel
 	);
 
 	
 	// constant declarations for VGA sync parameters
+	
 	localparam H_DISPLAY       = 640; // horizontal display area
-	localparam H_L_BORDER      =  48; // horizontal left border
-	localparam H_R_BORDER      =  16; // horizontal right border
-	localparam H_RETRACE       =  96; // horizontal retrace
+	localparam H_L_BORDER      =  60; // horizontal left border
+	localparam H_R_BORDER      =  56; // horizontal right border
+	localparam H_RETRACE       =  40; // horizontal retrace
+	
 	localparam H_MAX           = H_DISPLAY + H_L_BORDER + H_R_BORDER + H_RETRACE - 1;
 	localparam START_H_RETRACE = H_DISPLAY + H_R_BORDER;
 	localparam END_H_RETRACE   = H_DISPLAY + H_R_BORDER + H_RETRACE - 1;
 	
 	localparam V_DISPLAY       = 480; // vertical display area
-	localparam V_T_BORDER      =  10; // vertical top border
-	localparam V_B_BORDER      =  33; // vertical bottom border
+	localparam V_T_BORDER      =  33; // vertical top border
+	localparam V_B_BORDER      =  0; // vertical bottom border
 	localparam V_RETRACE       =   2; // vertical retrace
 	
 	
 	localparam V_MAX           = V_DISPLAY + V_T_BORDER + V_B_BORDER + V_RETRACE - 1;
+	
    localparam START_V_RETRACE = V_DISPLAY + V_B_BORDER;
 	localparam END_V_RETRACE   = V_DISPLAY + V_B_BORDER + V_RETRACE - 1;
 	
@@ -89,9 +92,5 @@ module VGA_Signal_Generator(
    assign vsync  = vsync_reg;
    assign x      = h_count_reg;
    assign y      = v_count_reg;
-   assign p_tick = pixel_tick;
-
-
-	
 	
 endmodule
